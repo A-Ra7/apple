@@ -40,6 +40,18 @@
         display: none;
         opacity: 0.7;
     }
+
+    .target-x {
+        background-image: url(apple.png);
+        background-size: cover;
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        opacity: 0.7;
+    }
     
     #itemList {
         color: white;
@@ -67,8 +79,12 @@
     const items = [
         { name: "Яблоко 1", x: -90, y: 360 },
         { name: "Яблоко 2", x: -20, y: 320 },
-        { name: "Банан 33", x: 20, y: 340 },
-        { name: "Яблоко 4", x: 90, y: 360 }
+        // { name: "Банан 33", x: 20, y: 340 },
+        { name: "Яблоко 3", x: 90, y: 360 }
+    ];
+
+    const itemX = [
+        { name: "Банан", x: 20, y: 340 }
     ];
     
     const gameContainer = document.getElementById('gameContainer');
@@ -97,19 +113,37 @@
             // Check if all items found
             const foundItems = document.querySelectorAll('.found').length;
             if (foundItems === items.length) {
-                setTimeout(() => {
-                    alert('Поздравляем! Вы нашли все яблочки =)');
-                }, 500);
+                alert('Поздравляем! Вы нашли все яблочки =)');
             }
         });
     });
-    
+
+        // Create item listX
+        itemX.forEach(itemX => {
+        // Create targetX area
+        const targetX = document.createElement('div');
+        targetX.className = 'target-x';
+        targetX.style.left = '50%';
+        targetX.style.transform = 'translateX(' + itemX.x + 'px)';
+        targetX.style.top = itemX.y + 'px';
+        gameContainer.appendChild(targetX);
+        
+        targetX.addEventListener('click', () => {
+            targetX.style.display = 'none';
+            alert('Вы нашли банан :O Попробуйте ещё раз!');
+        });
+    });
+
     // Show targets after image loads
     document.getElementById('gameImage').onload = () => {
         document.querySelectorAll('.target').forEach(target => {
-            target.style.display = 'block';
-        });
-    };
+        target.style.display = 'block';
+    });
+
+        document.querySelectorAll('.target-x').forEach(targetX => {
+        targetX.style.display = 'block';
+    });
+};
 </script>
 </body>
 </html>
