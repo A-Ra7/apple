@@ -30,7 +30,7 @@
     }
     
     .target {
-        background-image: url(apple.png);
+        background-image: url(img/apple.png);
         background-size: cover;
         position: fixed;
         width: 30px;
@@ -42,7 +42,7 @@
     }
 
     .target-x {
-        background-image: url(apple.png);
+        background-image: url(img/apple.png);
         background-size: cover;
         position: fixed;
         width: 30px;
@@ -69,8 +69,8 @@
 
 
 <div id="gameContainer">
-    <h1 class="header">Найдите 3 яблока в лесу</h1>
-    <img id="gameImage" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-forest-landscape_23-2149157285.jpg?t=st=1733546618~exp=1733550218~hmac=5843b42dddbdd063057203de9327ef281b642b182a531bfc10b80c78b3cf05ee&w=1060" alt="Find objects in this image">
+    <h1 class="header">Найдите 3 яблока без червяка</h1>
+    <img id="gameImage" src="img/bg.jpg" alt="Find objects in this image">
 </div>
 
 <div id="itemList"></div>
@@ -79,7 +79,6 @@
     const items = [
         { name: "Яблоко 1", x: -90, y: 360 },
         { name: "Яблоко 2", x: -20, y: 320 },
-        // { name: "Банан 33", x: 20, y: 340 },
         { name: "Яблоко 3", x: 90, y: 360 }
     ];
 
@@ -130,7 +129,7 @@
         
         targetX.addEventListener('click', () => {
             targetX.style.display = 'none';
-            alert('Вы нашли банан :O Попробуйте ещё раз!');
+            alert('Вы нашли яблоко с червяком :O Попробуйте ещё раз!');
         });
     });
 
