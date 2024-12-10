@@ -53,7 +53,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
     z-index: 10;
     display: none;
     animation: zoom 1s ease 0s 1 both;
@@ -64,7 +64,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
     z-index: 10;
     display: none;
     animation: zoom 1s ease 0s 1 both;
@@ -80,7 +80,7 @@ body {
 }
 }
 
-.target {
+.target, .target-x {
     background-image: url(img/apple.png);
     background-size: cover;
     position: absolute;
@@ -92,58 +92,47 @@ body {
 }
 
 @keyframes fall {
-0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-    transform: translateY(-200px);
-}
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+        transform: translateY(-200px);
+    }
 
-38% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0);
-}
+    30% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-55% {
-    animation-timing-function: ease-in;
-    transform: translateY(-65px);
-}
+    52% {
+        animation-timing-function: ease-in;
+        transform: translateY(-70px);
+    }
 
-72% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-}
+    70% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
 
-81% {
-    animation-timing-function: ease-in;
-    transform: translateY(-28px);
-}
+    81% {
+        animation-timing-function: ease-in;
+        transform: translateY(-25px);
+    }
 
-90% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-}
+    90% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
 
-95% {
-    animation-timing-function: ease-in;
-    transform: translateY(-8px);
-}
+    95% {
+        animation-timing-function: ease-in;
+        transform: translateY(-7px);
+    }
 
-100% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-}
-}
-
-.target-x {
-    background-image: url(img/apple.png);
-    background-size: cover;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    animation: fall 2s ease 0s 1 both;
+    100% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
 }
 
 #game-button {
