@@ -1,3 +1,16 @@
+window.onload = function () {
+    // Прелоадер
+    let preloader = document.getElementById('preloader-container');
+    if (!preloader.classList.contains('loaded')) {
+        preloader.classList.add('loaded');
+    }
+  
+    let bg = document.getElementById('game-container');
+    if (!bg.classList.contains('fade-in')) {
+        bg.classList.add('fade-in');
+    }
+}
+
 // Предметы
 const items = [
     { id: 1, x: 70, y: 300 },
