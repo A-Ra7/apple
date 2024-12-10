@@ -84,8 +84,8 @@ body {
     background-image: url(img/apple.png);
     background-size: cover;
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
     animation: fall 2s ease 0s 1 both;
