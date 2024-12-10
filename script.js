@@ -1,13 +1,8 @@
+// Прелоадер
 window.onload = function () {
-    // Прелоадер
     let preloader = document.getElementById('preloader-container');
     if (!preloader.classList.contains('loaded')) {
         preloader.classList.add('loaded');
-    }
-  
-    let bg = document.getElementById('game-container');
-    if (!bg.classList.contains('fade-in')) {
-        bg.classList.add('fade-in');
     }
 }
 
@@ -86,7 +81,6 @@ items.forEach(item => {
     });
 });
 
-// Перезагружаем игру
 function restartGame () {
     window.location.reload();
 }
