@@ -1,10 +1,13 @@
 // Предметы
 const items = [
-    { id: 1, name: "Яблоко", x: 70, y: 300 },
-    { id: 2, name: "Яблоко", x: 130, y: 310 },
-    { id: 3, name: "Яблоко", x: 190, y: 300 },
-    { id: 4, name: "Яблоко", x: 250, y: 310 }
+    { id: 1, x: 70, y: 300 },
+    { id: 2, x: 130, y: 310 },
+    { id: 3, x: 190, y: 300 },
+    { id: 4, x: 250, y: 310 }
 ];
+
+// Название предмета
+const itemName = "Яблоко";
 
 const gameContainer = document.getElementById('game-container');
 const itemList = document.getElementById('itemList');
@@ -26,7 +29,7 @@ items.forEach(item => {
 
         // Создаём список предметов
         const listItem = document.createElement('div');
-        listItem.textContent = item.name + " " + itemNumber;
+        listItem.textContent = itemName + " " + itemNumber;
         itemNumber ++;
         listItem.id = 'item-' + item.id;
         itemList.appendChild(listItem);
@@ -51,7 +54,8 @@ items.forEach(item => {
             setTimeout("alert('Вы нашли яблоко с червяком :O Попробуйте ещё раз!')", 1000); 
             return
         }
-        
+
+        // Вычёркиваем предмет из списка
         document.getElementById('item-' + item.id).classList.add('found');
 
         // Нашли все предметы без предмета Х
